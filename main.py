@@ -64,6 +64,8 @@ def encoding(txt: str, lngth: int = 8) -> str:
             code.insert(2 ** j - 1, 0)
         to_hamming.append(code)
 
+    errors = hamming_core(to_hamming, s_num, True)
+
     for i in to_hamming:
         result += "".join(map(str, i))
 
